@@ -1,2 +1,2 @@
-# React_discovery_API_MongoDB
+# En cours d'amélioration (VOIR BRANCHE DEVELOP !)
 Mon API en ASP.NET et MongoDB (qui va avec mon repo' REACT_DISCOVERY)
