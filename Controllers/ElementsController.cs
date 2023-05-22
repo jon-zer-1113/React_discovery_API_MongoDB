@@ -10,13 +10,16 @@ namespace ReactMongoDB_API_01.Controllers
     {
         private readonly ElementsService _elementsService;
 
+        // Injection de dépendances pour obtenir une instance de ElementsService.
         public ElementsController(ElementsService elementsService) =>
             _elementsService = elementsService;
 
+        // Endpoint pour récupérer tous les éléments de la liste.
         [HttpGet]
         public async Task<List<Element>> Get() =>
         await _elementsService.GetAsync();
 
+        // Récupérer un élément de la liste par son ID.
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Element>> Get(string id)
         {
@@ -30,6 +33,7 @@ namespace ReactMongoDB_API_01.Controllers
             return element;
         }
 
+        // Créer un nouvel élément dans la liste.
         [HttpPost]
         public async Task<IActionResult> Post(Element newElement)
         {
@@ -38,6 +42,7 @@ namespace ReactMongoDB_API_01.Controllers
             return CreatedAtAction(nameof(Get), new { id = newElement.Id }, newElement);
         }
 
+        // Mettre à jour un élément existant dans la liste par son ID.
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> Update(string id, Element updatedElement)
         {
@@ -55,6 +60,7 @@ namespace ReactMongoDB_API_01.Controllers
             return NoContent();
         }
 
+        // Supprimer un élément de la liste par son ID.
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> Delete(string id)
         {

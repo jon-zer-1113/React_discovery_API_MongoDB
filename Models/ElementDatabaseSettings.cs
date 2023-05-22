@@ -7,3 +7,10 @@
         public string ElementsCollectionName { get; set; } = null!;
     }
 }
+
+// Ce modèle représente les paramètres de connexion à la BDD.
+
+// Les propriétés de cette classe :
+// - comme leurs noms l'indiquent...
+
+// Ces propriétés correspondent au paramètres de connexion définis dans "appsettings.json".
